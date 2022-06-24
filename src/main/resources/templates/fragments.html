@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<!-- Fragment #1 : Headerfiles contains css and js references -->
+<head th:fragment="headerfiles">
+    <title>Introduction to SpringBoot Security</title>
+    <meta charset="UTF-8"/>
+    <link th:href="@{~/css/style.css}" rel="stylesheet">
+
+</head>
+<body>
+<!-- Fragment #2 : Navbar contains nav links -->
+<div th:fragment="nav">
+
+    <nav>
+        <ul>
+            <li><a href="#" th:href="@{~/index}">Homepage </a></li>
+            <li><a href="#" th:href="@{~/profile/index}">Profile</a></li>
+            <li><a href="#">Management</a></li>
+            <li><a href="#">Admin</a></li>
+            <li sec:authorize="isAuthenticated()"><a href ="/logout">Logout</a></li>
+            <li sec:authorize="isAnonymous()"><a href ="/login">Login</a></li>
+            <li sec:authorize="isAnonymous()"><a href ="/register">Register</a></li>
+
+        </ul>
+    </nav>
+</div>
+</body>
+</html>
