@@ -35,3 +35,6 @@ align-items: center;
     width: min-content;
     margin: 0 auto;
 }
+.inline-block-div {
+    display: inline-block;
+}

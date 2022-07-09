@@ -7,7 +7,6 @@ INSERT INTO users
  `zip_code`,
  `city`,
  `country`,
- `account_type`,
  `authorities`,
  `roles`)
 VALUES ('Maciej Krzywicki',
@@ -18,7 +17,6 @@ VALUES ('Maciej Krzywicki',
         '81-589',
         'Gdynia',
         'POLSKA',
-        'regular',
         'ACCESS_1,ACCESS_2,ACCESS_3',
         'admin');
 
@@ -32,7 +30,6 @@ INSERT INTO users
  `zip_code`,
  `city`,
  `country`,
- `account_type`,
  `authorities`,
  `roles`)
 VALUES ('Mateusz Krzywicki',
@@ -43,7 +40,6 @@ VALUES ('Mateusz Krzywicki',
         '81-589',
         'Gdynia',
         'POLSKA',
-        'regular',
         'ACCESS_1',
         'user');
 
@@ -57,7 +53,6 @@ INSERT INTO users
  `zip_code`,
  `city`,
  `country`,
- `account_type`,
  `authorities`,
  `roles`)
 VALUES ('Marcin Krzywicki',
@@ -68,7 +63,6 @@ VALUES ('Marcin Krzywicki',
         '81-589',
         'Gdynia',
         'POLSKA',
-        'regular',
         'ACCESS_1,ACCESS_2',
         'management');
 

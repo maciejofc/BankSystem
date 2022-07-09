@@ -14,13 +14,14 @@
 
     <nav>
         <ul>
-            <li><a href="#" th:href="@{~/index}">Homepage </a></li>
-            <li><a href="#" th:href="@{~/profile/index}">Profile</a></li>
-            <li><a href="#">Management</a></li>
-            <li><a href="#">Admin</a></li>
-            <li sec:authorize="isAuthenticated()"><a href ="/logout">Logout</a></li>
-            <li sec:authorize="isAnonymous()"><a href ="/login">Login</a></li>
-            <li sec:authorize="isAnonymous()"><a href ="/register">Register</a></li>
+            <li><a th:href="@{~/index}">Homepage </a></li>
+            <li sec:authorize="isAuthenticated()"><a th:href="@{~/profile/index}">Profile</a></li>
+            <li sec:authorize="hasRole('USER')"><a th:href="@{~/accounts}">Your accounts</a></li>
+            <li sec:authorize="hasRole('MANAGER')"><a href="#">Management</a></li>
+            <li sec:authorize="hasRole('ADMIN')"><a th:href="@{~/admin/index}">Admin</a></li>
+            <li sec:authorize="isAuthenticated()"><a href="/logout">Logout</a></li>
+            <li sec:authorize="isAnonymous()"><a href="/login">Login</a></li>
+            <li sec:authorize="isAnonymous()"><a href="/register">Register</a></li>
 
         </ul>
     </nav>

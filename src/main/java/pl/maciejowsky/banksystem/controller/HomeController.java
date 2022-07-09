@@ -8,21 +8,17 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.maciejowsky.banksystem.dao.UserDAO;
-import pl.maciejowsky.banksystem.model.AccountType;
 import pl.maciejowsky.banksystem.model.User;
 import pl.maciejowsky.banksystem.service.UserService;
 
 import javax.validation.Valid;
 import java.util.Arrays;
-import java.util.EnumSet;
 import java.util.List;
-import java.util.Set;
 
 
 @Controller
 public class HomeController {
-    //    private Set<AccountType> flyingAnimals = EnumSet.of( REGULAR , ENTEPRENEUR );
+
     private List<String> listAccountsType = Arrays.asList("REGULAR", "ENTREPRENEUR");
     @Autowired
     private UserService userService;
@@ -56,7 +52,7 @@ public class HomeController {
             return "register";
         }
         if (userService.registerUser(user)) {
-            System.out.println("UDALO SIE ZAREJESTROWAC");
+
             return "redirect:/login?registerSuccess";
         } else {
             model.addAttribute("emailExists", "This email already exists");
@@ -69,7 +65,7 @@ public class HomeController {
 
     @RequestMapping("/logout-success")
     public String goToLogoutPage(Model model) {
-        model.addAttribute("loggedOut","You have benn logged out");
+        model.addAttribute("loggedOut", "You have benn logged out");
         return "index";
     }
 }

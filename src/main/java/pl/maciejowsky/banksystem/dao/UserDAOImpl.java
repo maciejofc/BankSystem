@@ -8,6 +8,7 @@ import pl.maciejowsky.banksystem.model.User;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.*;
+import java.util.List;
 
 @Component
 public class UserDAOImpl implements UserDAO {
@@ -27,8 +28,8 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public int registerUser(User user) {
-        String sql = "INSERT INTO users (full_name,birth_day,email,password ,street_address,zip_code,city,country,created_at,account_type,roles)" +
-                " VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO users (full_name,birth_day,email,password ,street_address,zip_code,city,country,created_at,roles)" +
+                " VALUES (?,?,?,?,?,?,?,?,?,?)";
         Date birthDay = Date.valueOf(user.getBirthDay());
 
         Timestamp dateOfCreation = Timestamp.from(Instant.now());
@@ -41,8 +42,18 @@ public class UserDAOImpl implements UserDAO {
                 user.getCity(),
                 user.getCountry(),
                 dateOfCreation,
-                user.getAccountType().toString().toLowerCase(),
+
                 user.getRoles()
         );
+    }
+
+
+    @Override
+    public List<User> findAllUsersAndManagers() {
+        String sql = "SELECT * FROM users ";
+        List<User> users = jdbcTemplate.query(
+                sql, new UserRowMapper()
+        );
+        return users;
     }
 }

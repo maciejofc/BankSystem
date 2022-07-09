@@ -1,16 +1,12 @@
 package pl.maciejowsky.banksystem.mappers;
 
 import org.springframework.jdbc.core.RowMapper;
-import pl.maciejowsky.banksystem.model.AccountType;
 import pl.maciejowsky.banksystem.model.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 
 
 public class UserRowMapper implements RowMapper<User> {
@@ -39,7 +35,6 @@ public class UserRowMapper implements RowMapper<User> {
                 rs.getString("city"),
                 createdAt,
                 updatedAt,
-                AccountType.valueOf(rs.getString("account_type").toUpperCase()),
                 rs.getString("authorities"),
                 rs.getString("roles")
         );

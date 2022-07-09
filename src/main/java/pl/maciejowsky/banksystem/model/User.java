@@ -1,8 +1,8 @@
 package pl.maciejowsky.banksystem.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import pl.maciejowsky.banksystem.enums.UserType;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -30,7 +30,7 @@ public class User {
     private String email;
 
 
-    @Size(min=8,max=24)
+    @Size(min = 8, max = 24)
     private String password;
     @NotBlank
     private String streetAddress;
@@ -42,7 +42,7 @@ public class User {
     private String country;
     private Instant createdAt;
     private Instant updatedAt;
-    private AccountType accountType;
+
     private String authorities;
     private String roles;
 
@@ -164,19 +164,11 @@ public class User {
         this.updatedAt = updatedAt;
     }
 
-    public AccountType getAccountType() {
-        return accountType;
-    }
-
-    public void setAccountType(AccountType accountType) {
-        this.accountType = accountType;
-    }
-
 
     public User() {
     }
 
-    public User(int id, String fullName, LocalDate birthDay, String email, String password, String streetAddress, String zipCode, String city, String country, Instant createdAt, Instant updatedAt, AccountType accountType, String authorities, String roles) {
+    public User(int id, String fullName, LocalDate birthDay, String email, String password, String streetAddress, String zipCode, String city, String country, Instant createdAt, Instant updatedAt, String authorities, String roles) {
         this.id = id;
         this.fullName = fullName;
         this.birthDay = birthDay;
@@ -188,12 +180,12 @@ public class User {
         this.country = country;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.accountType = accountType;
+
         this.authorities = authorities;
         this.roles = roles;
     }
 
-    public User(int id, String fullName, LocalDate birthDay, String email, String password, String streetAddress, String zipCode, String city, String country, Instant createdAt, AccountType accountType, String authorities, String roles) {
+    public User(int id, String fullName, LocalDate birthDay, String email, String password, String streetAddress, String zipCode, String city, String country, Instant createdAt, String authorities, String roles) {
         this.id = id;
         this.fullName = fullName;
         this.birthDay = birthDay;
@@ -205,7 +197,7 @@ public class User {
         this.country = country;
         this.createdAt = createdAt;
         this.updatedAt = null;
-        this.accountType = accountType;
+
         this.authorities = authorities;
         this.roles = roles;
     }
