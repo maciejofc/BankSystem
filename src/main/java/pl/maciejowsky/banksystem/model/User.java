@@ -201,4 +201,23 @@ public class User {
         this.authorities = authorities;
         this.roles = roles;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", fullName='" + fullName + '\'' +
+                ", birthDay=" + birthDay +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", streetAddress='" + streetAddress + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", authorities='" + authorities + '\'' +
+                ", roles='" + roles + '\'' +
+                '}';
+    }
 }

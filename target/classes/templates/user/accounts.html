@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="fragments.html :: headerfiles">
+
+
+</head>
+
+<body>
+<header th:insert="fragments.html :: nav"></header>
+
+<div class="inline-block-div" th:each="account: ${accountList}">
+
+    <div>Account : <span th:text="${account.specificAccount}"></span></div>
+    <div>
+        Balance : <span th:text="${account.balance}"></span>
+    </div>
+    <div>
+        Account number: <span th:text="${account.accountNumber}"></span>
+    </div>
+    <div>
+        Account status: <span th:if="${account.isActive()}">Active</span>
+        <span th:if="${!account.isActive()}">Non active</span>
+    </div>
+    <div>
+
+        Interest rate: <span th:text="${account.interestRate}"></span>%
+    </div>
+
+
+</div>
+</body>
+</html>

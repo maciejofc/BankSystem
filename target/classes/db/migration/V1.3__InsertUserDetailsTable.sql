@@ -2,7 +2,7 @@ INSERT INTO user_details
 (`id`,
  `funds`,
  `account_type`)
-VALUES (1,
+VALUES (3,
         200,
         'regular');
 
@@ -10,6 +10,6 @@ INSERT INTO user_details
 (`id`,
  `funds`,
  `account_type`)
-VALUES (2,
+VALUES (4,
         400,
-        'regular')
+        'entrepreneur')

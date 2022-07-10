@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="56ff5287-cbea-4d7f-b67f-a57925b66bfa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/model/FormUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/model/UserDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/utility/AccountNumberGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1.6__AlterTableUser.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/dao/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/dao/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1.1__InsertUserTable.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1.1__InsertUserTable.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1.3__InsertBankingInfoTable.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1.3__InsertUserDetailsTable.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1.5__InsertAccountDetails.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1.5__InsertAccountDetails.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="Enum" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="28wdICBcF7rCVWnLXCmvtYvkZO8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable&quot;: &quot;ALL&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/krzyw/Desktop/intelji-workspace/jdbc-start&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;DockerRegistry&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;e03779e7e3a2f357185e4d8a6463a69c&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\krzyw\Desktop\intelji-workspace\BankSystem\src\main\resources\static\css" />
+      <recent name="C:\Users\krzyw\Desktop\intelji-workspace\BankSystem\src\main\resources" />
+      <recent name="C:\Users\krzyw\Desktop\intelji-workspace\BankSystem\src\main\resources\templates" />
+      <recent name="C:\Users\krzyw\Desktop\intelji-workspace\BankSystem\src\main\resources\db\migration" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\krzyw\Desktop\intelji-workspace\BankSystem\src\main\resources\templates\user" />
+      <recent name="C:\Users\krzyw\Desktop\intelji-workspace\BankSystem\src\main\resources\public\images" />
+      <recent name="C:\Users\krzyw\Desktop\intelji-workspace\BankSystem\src\main\resources\public\css" />
+      <recent name="C:\Users\krzyw\Desktop\intelji-workspace\BankSystem\src\main\resources\public" />
+      <recent name="C:\Users\krzyw\Desktop\intelji-workspace\BankSystem\src\main\resources\static\css" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="BankSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="BankSystem" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.maciejowsky.banksystem.BankSystemApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="56ff5287-cbea-4d7f-b67f-a57925b66bfa" name="Changes" comment="" />
+      <created>1652131501973</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652131501973</updated>
+      <workItem from="1652131504899" duration="459000" />
+      <workItem from="1652131978597" duration="1212000" />
+      <workItem from="1652134358701" duration="1473000" />
+      <workItem from="1652365294754" duration="8848000" />
+      <workItem from="1652897914087" duration="9222000" />
+      <workItem from="1654276556888" duration="3348000" />
+      <workItem from="1654944007824" duration="12886000" />
+      <workItem from="1655238416547" duration="8463000" />
+      <workItem from="1655403855237" duration="20213000" />
+      <workItem from="1655637406311" duration="13299000" />
+      <workItem from="1655758420169" duration="9335000" />
+      <workItem from="1655990349574" duration="5656000" />
+      <workItem from="1656002891588" duration="27017000" />
+      <workItem from="1657301099735" duration="12311000" />
+      <workItem from="1657370694707" duration="17675000" />
+      <workItem from="1657458149033" duration="23287000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/mappers/UserRowMapper.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/controller/HomeController.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/controller/AdminController.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.dao.EmptyResultDataAccessException" package="org.springframework.dao" />
+          <option name="timeStamp" value="8" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/model/User.java</url>
+          <line>29</line>
+          <properties field="email" class="pl.maciejowsky.banksystem.model.User" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

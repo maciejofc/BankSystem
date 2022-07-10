@@ -1,0 +1,40 @@
+* {
+    margin:0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    padding: 1em;
+    border:1px solid black;
+    gap:2em;
+}
+
+li a {
+    text-decoration: none;
+    color:black;
+}
+li a:hover {
+    color:grey;
+}
+
+.container {
+
+    display:flex;
+    flex-direction: column;
+width: 20%;
+    margin:0 auto;
+    justify-content: space-between;
+align-items: center;
+}
+#informations {
+
+    padding:1em;
+    border:1px solid black;
+    width: min-content;
+    margin: 0 auto;
+}
+.inline-block-div {
+    display: inline-block;
+}

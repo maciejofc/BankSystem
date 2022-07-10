@@ -1,0 +1,2 @@
+ALTER TABLE users
+    ALTER authorities SET DEFAULT 'ACCESS_1';
