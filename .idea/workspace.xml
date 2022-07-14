@@ -5,19 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56ff5287-cbea-4d7f-b67f-a57925b66bfa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/model/FormUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/model/UserDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/utility/AccountNumberGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1.6__AlterTableUser.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/controller/TransferController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/dao/TransferDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/dao/TransferDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/enums/TransferType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/model/Transfer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/service/TransferService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1.7__CreateTransferHistoryTable.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/dotransfer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/transfer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/transferhistory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/controller/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/dao/AccountDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/dao/AccountDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/dao/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/dao/UserDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1.1__InsertUserTable.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1.1__InsertUserTable.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1.3__InsertBankingInfoTable.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1.3__InsertUserDetailsTable.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1.5__InsertAccountDetails.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1.5__InsertAccountDetails.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1.2__CreateUserDetails.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1.2__CreateUserDetails.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1.4__CreateAccountDetails.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1.4__CreateAccountDetails.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V1.2__CreateUserDetails.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/migration/V1.2__CreateUserDetails.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V1.4__CreateAccountDetails.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/migration/V1.4__CreateAccountDetails.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/maciejowsky/banksystem/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/maciejowsky/banksystem/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/maciejowsky/banksystem/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/maciejowsky/banksystem/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/maciejowsky/banksystem/controller/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/maciejowsky/banksystem/controller/ProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/maciejowsky/banksystem/dao/AccountDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/maciejowsky/banksystem/dao/AccountDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/maciejowsky/banksystem/dao/UserDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/maciejowsky/banksystem/dao/UserDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +102,10 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="pl.maciejowsky.banksystem.dao" />
+      <recent name="pl.maciejowsky.banksystem.service" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\krzyw\Desktop\intelji-workspace\BankSystem\src\main\resources\static\css" />
       <recent name="C:\Users\krzyw\Desktop\intelji-workspace\BankSystem\src\main\resources" />
@@ -133,6 +153,10 @@
       <workItem from="1657301099735" duration="12311000" />
       <workItem from="1657370694707" duration="17675000" />
       <workItem from="1657458149033" duration="23287000" />
+      <workItem from="1657489646055" duration="14250000" />
+      <workItem from="1657639606972" duration="6462000" />
+      <workItem from="1657808371888" duration="12091000" />
+      <workItem from="1657822721630" duration="11368000" />
     </task>
     <servers />
   </component>
@@ -167,6 +191,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/controller/AdminController.java</url>
           <line>29</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/maciejowsky/banksystem/controller/TransferController.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.IllegalArgumentException" package="java.lang" />

@@ -1,0 +1,55 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+
+<head th:insert="fragments.html :: headerfiles">
+    <title>Transfer page</title>
+
+
+</head>
+<body>
+<header th:insert="fragments.html :: nav"></header>
+<ul>
+    <li sec:authorize="hasRole('USER')"><a th:href="@{~/user/transfer/make}">Make transfer</a></li>
+    <li sec:authorize="hasRole('USER')"><a th:href="@{~/user/transfer/history}">History of transfers</a></li>
+</ul>
+MAKE TRANSFER PAGE
+<!--<form th:object="${transferFormData}" th:action="@{/user/transfer/make}" method="post">-->
+<!--    <label for="fromAccount">From</label>-->
+<!--    <input type="text" id ="fromAccount" th:field="*{transferFormData.fromAccount}">-->
+<!--</form>-->
+<form th:object="${formData}" th:action="@{/user/transfer/make}" method="post">
+
+
+    <label for="fromAccount">Account that you use to transfer:</label>
+    <select id="fromAccount" th:field="*{fromAccount}">
+        <option th:each="account : ${listAvailableAccounts}" th:value="${account.key}"
+                th:text="${account.key + '(' + account.value+'PLN)'}"/>
+    </select>
+
+
+    <label for="toAccount">To account :</label>:
+    <input type="text" id="toAccount" th:field="*{toAccount}" autofocus="autofocus"/> <br/>
+    <p th:if="${errors[0].length() > 0 }"><span th:text="${errors[0]}"></span> </p>
+
+    <label for="funds">Funds:</label>:
+    <input type="number" id="funds" th:field="*{amount}" autofocus="autofocus"/> <br/>
+    <p th:if="${errors[1].length() > 0}"> <span th:text="${errors[1]}"></span></p>
+
+
+    <label for="transferType">Type of transfer:</label>
+    <select id="transferType" th:field="*{transferType}">
+        <option th:each="typeTransfer : ${listTransferTypes}" th:value="${typeTransfer}" th:text="${typeTransfer}"/>
+    </select>
+
+
+
+
+    <button type="submit">Send</button>
+    <p th:if="${param.transferSuccess}">Succesfully transfered money</p>
+</form>
+
+
+</body>
+</html>

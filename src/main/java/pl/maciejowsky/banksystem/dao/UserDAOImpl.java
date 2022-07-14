@@ -1,5 +1,6 @@
 package pl.maciejowsky.banksystem.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -20,6 +21,7 @@ import static pl.maciejowsky.banksystem.utility.AccountNumberGenerator.generateN
 
 @Component
 public class UserDAOImpl implements UserDAO {
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     public UserDAOImpl(JdbcTemplate jdbcTemplate) {

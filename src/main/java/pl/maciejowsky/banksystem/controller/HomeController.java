@@ -48,6 +48,8 @@ public class HomeController {
     public String doRegisterUser(@Valid @ModelAttribute("formData") FormUser user,
                                  BindingResult bindingResult,
                                  Model model) {
+
+
         if (bindingResult.hasErrors()) {
             model.addAttribute("listUserType", listUserType);
 

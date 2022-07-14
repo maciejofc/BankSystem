@@ -17,7 +17,7 @@ public class ProfileController {
     private UserService userService;
 
     @RequestMapping("/profile/index")
-    public String profile(Model model, Principal principal) {
+    public String goToProfile(Model model, Principal principal) {
         String currentlyLoggedUser = principal.getName();
         model.addAttribute("user", userService.getUserInformation(currentlyLoggedUser));
         return "profile/index";

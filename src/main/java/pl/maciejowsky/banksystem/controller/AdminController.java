@@ -23,7 +23,7 @@ public class AdminController {
     }
 
     @RequestMapping("/admin/index")
-    public String getAdminIndexPage() {
+    public String goToAdminIndexPage() {
         return "admin/index";
     }
 
