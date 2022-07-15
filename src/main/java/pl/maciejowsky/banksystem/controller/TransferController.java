@@ -86,7 +86,11 @@ public class TransferController {
 
 
     @RequestMapping("/user/transfer/history")
-    public String goToTransferHistory() {
+    public String goToTransferHistory(Model model,Principal principal) {
+        String email = principal.getName();
+        List<List<Transfer>> fullHistory = transferService.getTransferHistoryForUser(email);
+        model.addAttribute("sentHistory",fullHistory.get(0));
+        model.addAttribute("receivedHistory",fullHistory.get(1));
         return "user/transferhistory";
     }
 

@@ -15,7 +15,7 @@ public class AccountController {
     @Autowired
     private AccountService accountService;
 
-    @RequestMapping("/accounts")
+    @RequestMapping("/user/accounts")
     public String getAllAccounts(Principal principal, Model model) {
         String searchEmailConstraint = principal.getName();
         List<Account> accounts = accountService.getAllAccounts(searchEmailConstraint);

@@ -6,6 +6,9 @@ CREATE table transfer_history(
                                  date_of_execution timestamp ,
                                  date_of_receiving timestamp ,
                                  transfer_type ENUM ('normal', 'express','instant') NOT NULL,
-                                 CONSTRAINT fk_from_account FOREIGN KEY (from_account) REFERENCES account_details(account_number) ,
-                                 CONSTRAINT fk_to_account FOREIGN KEY (to_account) REFERENCES account_details(account_number)
+                                 fk_sender_user_id int NOT NULL,
+                                 fk_receiver_user_id int NOT NULL,
+
+                                 CONSTRAINT fk_sender_user_id_constraint FOREIGN KEY (fk_sender_user_id) REFERENCES users(id) ,
+                                 CONSTRAINT fk_receiver_user_id_constraint FOREIGN KEY (fk_receiver_user_id) REFERENCES users(id)
 );

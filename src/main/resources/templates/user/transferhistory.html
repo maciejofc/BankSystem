@@ -20,5 +20,25 @@
 </ul>
 
 TRANSFER HISTORY PAGE
+SENT HISTORY
+<ul th:each="row: ${sentHistory}">
+    <li th:text="${row.fromAccount}"></li>
+    <li th:text="${row.toAccount}"></li>
+    <li th:text="${row.amount}"></li>
+    <li th:text="${row.transferType}"></li>
+    <li th:text="${row.sendAt}"></li>
+    <li th:text="${row.receiveAt}"></li>
+
+</ul>
+RECEIVED HISTORY
+<ul th:each="row: ${receivedHistory}">
+    <li th:text="${row.fromAccount}"></li>
+    <li th:text="${row.toAccount}"></li>
+    <li th:text="${row.amount}"></li>
+    <li th:text="${row.transferType}"></li>
+    <li th:text="${row.sendAt}"></li>
+    <li th:text="${row.receiveAt}"></li>
+
+</ul>
 </body>
 </html>
