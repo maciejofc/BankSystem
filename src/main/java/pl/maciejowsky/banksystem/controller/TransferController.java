@@ -14,7 +14,10 @@ import pl.maciejowsky.banksystem.service.TransferService;
 
 import java.math.BigDecimal;
 import java.security.Principal;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 public class TransferController {
@@ -69,7 +72,7 @@ public class TransferController {
         if (errorsDueToIncorrectData == null) {
             model.addAttribute("listTransferTypes", listTransferTypes);
             model.addAttribute("listAvailableAccounts", listNumberAccountsWithFunds(principal.getName()));
-            transferService.makePassableTransfer(transfer);
+            transferService.makePassableSpecificTransfer(transfer);
             return "redirect:/user/transfer/make?transferSuccess";
 
         } else {

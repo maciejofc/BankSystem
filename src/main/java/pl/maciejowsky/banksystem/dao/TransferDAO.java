@@ -11,4 +11,6 @@ public interface TransferDAO {
     void makeTransferFromFirstAccount(Transfer transfer);
 
     void receiveTransferFromSecondAccount(Transfer transfer);
+
+    void saveTransferToHistory(Transfer transfer);
 }

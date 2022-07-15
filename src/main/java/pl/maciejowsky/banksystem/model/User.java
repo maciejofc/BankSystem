@@ -1,17 +1,14 @@
 package pl.maciejowsky.banksystem.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import pl.maciejowsky.banksystem.enums.UserType;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.Instant;
 import java.time.LocalDate;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import java.util.List;
 
 public class User {

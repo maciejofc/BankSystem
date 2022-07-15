@@ -8,6 +8,7 @@ import java.util.List;
 public interface UserDAO {
 
     List<User> findAllUsersAndManagers();
+
     User findUserByEmail(String email);
 
     void registerUser(FormUser user);

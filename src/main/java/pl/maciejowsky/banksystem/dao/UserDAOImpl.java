@@ -1,7 +1,6 @@
 package pl.maciejowsky.banksystem.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import pl.maciejowsky.banksystem.mappers.UserRowMapper;
@@ -11,13 +10,10 @@ import pl.maciejowsky.banksystem.model.UserDetail;
 import pl.maciejowsky.banksystem.utility.AccountNumberGenerator;
 
 import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.time.*;
+import java.time.Instant;
 import java.util.List;
 
-import static pl.maciejowsky.banksystem.utility.AccountNumberGenerator.generateNumber;
 
 @Component
 public class UserDAOImpl implements UserDAO {
@@ -31,7 +27,7 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public User findUserByEmail(String email) {
         String sql = "SELECT * FROM users WHERE email = ?";
-        User user = jdbcTemplate.queryForObject(sql, new UserRowMapper(), new Object[]{email});
+        User user = jdbcTemplate.queryForObject(sql, new UserRowMapper(), email);
         return user;
     }
 
@@ -39,7 +35,7 @@ public class UserDAOImpl implements UserDAO {
     public int findUserIdByEmail(String email) {
         String sql = "SELECT id FROM users WHERE email =?";
         return jdbcTemplate.queryForObject(
-                sql, new Object[]{email}, Integer.class);
+                sql, Integer.class, email);
     }
 
     public void insertUserDetailTable(int id, UserDetail userDetail) {
@@ -78,7 +74,7 @@ public class UserDAOImpl implements UserDAO {
         while (true) {
             String possibleNewAccountNumber = AccountNumberGenerator.generateNumber();
 
-            boolean exists = jdbcTemplate.queryForObject(sql, new Object[]{possibleNewAccountNumber}, Boolean.class);
+            boolean exists = jdbcTemplate.queryForObject(sql, Boolean.class, possibleNewAccountNumber);
             if (!exists) {
                 return possibleNewAccountNumber;
             }

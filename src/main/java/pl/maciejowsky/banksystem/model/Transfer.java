@@ -3,6 +3,7 @@ package pl.maciejowsky.banksystem.model;
 import pl.maciejowsky.banksystem.enums.TransferType;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 
 public class Transfer {
 
@@ -10,6 +11,10 @@ public class Transfer {
     private String toAccount;
     private BigDecimal amount;
     private TransferType transferType;
+
+    private Instant sendAt;
+
+    private Instant receiveAt;
 
     public String getFromAccount() {
         return fromAccount;
@@ -43,14 +48,32 @@ public class Transfer {
         this.transferType = transferType;
     }
 
+    public Instant getSendAt() {
+        return sendAt;
+    }
+
+    public void setSendAt(Instant sendAt) {
+        this.sendAt = sendAt;
+    }
+
+    public Instant getReceiveAt() {
+        return receiveAt;
+    }
+
+    public void setReceiveAt(Instant receiveAt) {
+        this.receiveAt = receiveAt;
+    }
+
     public Transfer() {
     }
 
-    public Transfer(String fromAccount, String toAccount, BigDecimal amount, TransferType transferType) {
+    public Transfer(String fromAccount, String toAccount, BigDecimal amount, TransferType transferType, Instant sendAt, Instant receiveAt) {
         this.fromAccount = fromAccount;
         this.toAccount = toAccount;
         this.amount = amount;
         this.transferType = transferType;
+        this.sendAt = sendAt;
+        this.receiveAt = receiveAt;
     }
 
     @Override

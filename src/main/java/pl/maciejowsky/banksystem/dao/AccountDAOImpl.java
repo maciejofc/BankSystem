@@ -31,7 +31,7 @@ public class AccountDAOImpl implements AccountDAO {
                 " ON account_details.fk_user_detail_id = users.id" +
                 " WHERE users.email=?";
 
-        List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper(), new Object[]{email});
+        List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper(), email);
         return accounts;
     }
 }

@@ -5,7 +5,7 @@ CREATE table transfer_history(
                                  amount decimal(19,4) NOT NULL,
                                  date_of_execution timestamp ,
                                  date_of_receiving timestamp ,
-                                 transfer_type varchar(20) NOT NULL ,
+                                 transfer_type ENUM ('normal', 'express','instant') NOT NULL,
                                  CONSTRAINT fk_from_account FOREIGN KEY (from_account) REFERENCES account_details(account_number) ,
                                  CONSTRAINT fk_to_account FOREIGN KEY (to_account) REFERENCES account_details(account_number)
 );
