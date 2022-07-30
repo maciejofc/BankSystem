@@ -48,26 +48,28 @@ public class TransferService {
         //Taking away money from first account
         transferDAO.makeTransferFromFirstAccount(transfer);
         //Determinating sending and receiving dates
-        int delayInSec = transfer.getTransferType().getTimeOfSendingInSec();
+        int delayInMiliSec = transfer.getTransferType().getTimeOfSendingInSec();
         transfer.setSendAt(Instant.now());
-        transfer.setReceiveAt(transfer.getSendAt().plusMillis(delayInSec));
+        transfer.setReceiveAt(transfer.getSendAt().plusMillis(delayInMiliSec));
         //Saving to history table with recognizing which number is
         //associated with which user to save foreign keys to make easy select for history of transfer for given user(id)
 
         int senderId = transferDAO.findUserIdByAccountNumber(transfer.getFromAccount());
         int receiverId = transferDAO.findUserIdByAccountNumber(transfer.getToAccount());
 
-        transferDAO.saveTransferToHistory(transfer,senderId,receiverId);
+        transferDAO.saveTransferToHistory(transfer, senderId, receiverId);
+
+
         //Receiving money from first to second account
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
 
-                System.out.println("AFTER" + delayInSec / 100 + ",seconds i send " + transfer.getAmount());
+                System.out.println("AFTER" + delayInMiliSec / 1000 + ",seconds i send " + transfer.getAmount());
                 transferDAO.receiveTransferFromSecondAccount(transfer);
                 timer.cancel();
             }
-        }, delayInSec);
+        }, delayInMiliSec);
 
 
     }

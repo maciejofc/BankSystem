@@ -1,0 +1,33 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+>
+
+<!--ns(namespace)-->
+<!--A DTD(Document Type Definition :xmlns:th defines the structure and the legal elements
+ and attributes of an XML document.-->
+
+<head th:insert="fragments.html :: headerfiles">
+    <title>Transfer page</title>
+
+
+</head>
+<body>
+<header th:insert="fragments.html :: nav"></header>
+<header th:insert="fragments.html :: earnFragment"></header>
+
+
+<h1>DEPOSIT HISTORY PAGE</h1>
+
+<ul th:each="row: ${depositHistory}">
+    <li th:text="${row.interestRate}"></li>
+    <li th:text="${row.depositTime}"></li>
+    <li th:text="${row.depositAmount}"></li>
+    <li th:text="${row.startDate}"></li>
+    <li th:text="${row.depositStatus}"></li>
+    <li th:text="${row.moneyEarned}"></li>
+
+</ul>
+
+<p th:text="|You have already earned: ${allEarnedMoney}|">
+</body>
+</html>

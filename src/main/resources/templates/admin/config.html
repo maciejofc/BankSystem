@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="fragments.html :: headerfiles">
+
+
+</head>
+
+<body>
+<header th:insert="fragments.html :: nav"></header>
+<div class="informations">
+    CURRENT BANK CONFIGURATION
+    <p th:text="${currentConfig.announcement}"/>
+    <p th:text="${currentConfig.interestRateOneMinute}"/>
+    <p th:text="${currentConfig.minAmountOneMinuteDeposit}"/>
+    <p th:text="${currentConfig.interestRateFiveMinute}"/>
+    <p th:text="${currentConfig.minAmountFiveMinuteDeposit}"/>
+    <p th:text="${currentConfig.interestRateTenMinute}"/>
+    <p th:text="${currentConfig.minAmountTenMinuteDeposit}"/>
+    <p th:text="${currentConfig.interestRateSavingRegular}"/>
+    <p th:text="${currentConfig.interestRateSavingEntrepreneur}"/>
+    <p th:text="${currentConfig.bankStatus}"/>
+    <p th:text="${author}"/>
+    <form th:object="${formData}" th:action="@{/admin/config}" method="post">
+        <label for="announcement">Announcement :</label>:
+        <input type="text" id="announcement" name="announcement" th:value="${currentConfig.announcement}"
+               autofocus="autofocus"/> <br/>
+
+        <label for="interestRateOneMinute">Interest rate for ten 1 minute deposit :</label>:
+        <input type="text" id="interestRateOneMinute" name="interestRateOneMinute"
+               th:value="${currentConfig.interestRateOneMinute}" autofocus="autofocus"/> <br/>
+
+        <label for="minAmountOneMinuteDeposit">Min amount for 1 minute deposit :</label>:
+        <input type="text" id="minAmountOneMinuteDeposit" name="minAmountOneMinuteDeposit"
+               th:value="${currentConfig.minAmountOneMinuteDeposit}" autofocus="autofocus"/> <br/>
+
+
+        <label for="interestRateFiveMinute">Interest rate for 5 minute deposit :</label>:
+        <input type="text" id="interestRateFiveMinute" name="interestRateFiveMinute"
+               th:value="${currentConfig.interestRateFiveMinute}" autofocus="autofocus"/> <br/>
+
+        <label for="minAmountFiveMinuteDeposit">Min amount for 5 minute deposit :</label>:
+        <input type="text" id="minAmountFiveMinuteDeposit" name="minAmountFiveMinuteDeposit"
+               th:value="${currentConfig.minAmountFiveMinuteDeposit}" autofocus="autofocus"/> <br/>
+
+
+        <label for="interestRateTenMinute">Interest rate for 10 minute deposit :</label>:
+        <input type="text" id="interestRateTenMinute" name="interestRateTenMinute"
+               th:value="${currentConfig.interestRateTenMinute}" autofocus="autofocus"/> <br/>
+
+        <label for="minAmountTenMinuteDeposit">Min amount for 10 minute deposit :</label>:
+        <input type="text" id="minAmountTenMinuteDeposit" name="minAmountTenMinuteDeposit"
+               th:value="${currentConfig.minAmountTenMinuteDeposit}" autofocus="autofocus"/> <br/>
+
+
+        <label for="interestRateSavingRegular">Interest rate for regular saving account</label>:
+        <input type="text" id="interestRateSavingRegular" name="interestRateSavingRegular"
+               th:value="${currentConfig.interestRateSavingRegular}" autofocus="autofocus"/> <br/>
+
+        <label for="interestRateSavingEntrepreneur">Interest rate for entrepreneur saving account :</label>:
+        <input type="text" id="interestRateSavingEntrepreneur" name="interestRateSavingEntrepreneur"
+               th:value="${currentConfig.interestRateSavingEntrepreneur}" autofocus="autofocus"/> <br/>
+
+        <label for="bankStatus">Is bank active? :</label>:
+        <input type="checkbox" id="bankStatus" name="bankStatus" th:value="${currentConfig.bankStatus}"
+               autofocus="autofocus"/> <br/>
+
+        <button type="submit">Make changes</button>
+    </form>
+</div>
+</body>
+</html>

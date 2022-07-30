@@ -1,0 +1,83 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+>
+
+<!--ns(namespace)-->
+<!--A DTD(Document Type Definition :xmlns:th defines the structure and the legal elements
+ and attributes of an XML document.-->
+
+<head th:insert="fragments.html :: headerfiles">
+    <title>Deposit page</title>
+
+
+</head>
+<body>
+<header th:insert="fragments.html :: nav"></header>
+<div th:insert="fragments.html :: earnFragment"></div>
+
+<h1>DEPOSIT PAGE<h1></h1>
+
+<p>1 option</p>
+
+<p th:text="|min.${depositInfo.minAmountOneMinuteDeposit} PLN|"></p>
+<p th:text="|${depositInfo.interestRateOneMinute} %|"></p>
+<p>minimum 1 minute</p>
+
+
+<p>2 option</p>
+<p th:text="|min.${depositInfo.minAmountFiveMinuteDeposit} PLN|"></p>
+<p th:text="|${depositInfo.interestRateFiveMinute} %|"></p>
+<p>minimum 5 minutes</p>
+
+
+<p>3 option</p>
+<p th:text="|${depositInfo.minAmountTenMinuteDeposit} PLN|"></p>
+<p th:text="|${depositInfo.interestRateTenMinute} %|"></p>
+<p>minimum 10 minutes</p>
+
+<br>
+Available funds to deposit:
+<p th:text="${availableFunds}"></p>
+<div th:if="${activeDeposit == null}">
+    <form method="post" th:action="@{/user/earning/deposit}" th:object="${deposit}">
+
+        <label for="depositAmount">Money you want deposit:</label>:
+        <input autofocus="autofocus" id="depositAmount" th:field="*{depositAmount}" type="number"/> <br/>
+
+        <label for="interestRate">Type of deposit you want make:</label>
+        <select id="interestRate" th:field="*{interestRate}">
+            <option th:text="1min " th:value="${depositInfo.interestRateOneMinute}"></option>
+            <option th:text="5min " th:value="${depositInfo.interestRateFiveMinute}"></option>
+            <option th:text="10min " th:value="${depositInfo.interestRateTenMinute}"></option>
+        </select>
+
+
+        <button type="submit">Start deposit</button>
+
+
+    </form>
+</div>
+
+
+<br>
+
+<p th:text="${fundsError}"></p>
+<p th:text="${cancelError}"></p>
+
+<p th:if="${param.depositSuccess}">You have deposited money successfully</p>
+<br>
+<div th:if="${activeDeposit != null}">
+
+    <div th:if="${activeDeposit.depositStatus == T(pl.maciejowsky.banksystem.enums.DepositStatus).STARTED}">
+        <div th:text="|Money to deposited : ${activeDeposit.getDepositAmount()}|"></div>
+        <a th:href="@{~/user/earning/deposit/cancel}">Cancel deposit</a>
+    </div>
+    <div th:if="${activeDeposit.depositStatus == T(pl.maciejowsky.banksystem.enums.DepositStatus).READY}">
+        <div th:text="|Money to return : ${moneyToReturn} PLN|"></div>
+            <a th:href="@{~/user/earning/deposit/finalize}">Finalize deposit - earn money</a>
+
+        </div>
+    </div>
+
+</body>
+</html>

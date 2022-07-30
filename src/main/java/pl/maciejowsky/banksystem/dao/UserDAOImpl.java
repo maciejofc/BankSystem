@@ -131,4 +131,13 @@ public class UserDAOImpl implements UserDAO {
         );
         return users;
     }
+
+
+    @Override
+    public User findUserById(int id) {
+        String sql = "SELECT * FROM users WHERE id = ?";
+        User user = jdbcTemplate.queryForObject(sql, new UserRowMapper(), id);
+        return user;
+    }
+
 }

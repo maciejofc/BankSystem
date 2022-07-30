@@ -7,11 +7,11 @@ public enum TransferType {
     EXPRESS(new BigDecimal("5"), 30000),
     INSTANT(new BigDecimal("15"), 0);
     private final BigDecimal fee;
-    private final int timeOfSendingInSec;
+    private final int timeOfSendingInMiliSec;
 
-    TransferType(BigDecimal fee, int timeOfSendingInSec) {
+    TransferType(BigDecimal fee, int timeOfSendingInMiliSec) {
         this.fee = fee;
-        this.timeOfSendingInSec = timeOfSendingInSec;
+        this.timeOfSendingInMiliSec = timeOfSendingInMiliSec;
     }
 
     public BigDecimal getFee() {
@@ -19,7 +19,7 @@ public enum TransferType {
     }
 
     public int getTimeOfSendingInSec() {
-        return timeOfSendingInSec;
+        return timeOfSendingInMiliSec;
     }
 
 }

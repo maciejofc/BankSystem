@@ -11,5 +11,6 @@ public interface UserDAO {
 
     User findUserByEmail(String email);
 
+    User findUserById(int id);
     void registerUser(FormUser user);
 }

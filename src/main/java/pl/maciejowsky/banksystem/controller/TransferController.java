@@ -55,7 +55,7 @@ public class TransferController {
         model.addAttribute("formData", new Transfer());
         model.addAttribute("listAvailableAccounts", listNumberAccountsWithFunds(currentlyLoggedUser));
         model.addAttribute("errors", new String[]{"", ""});
-        return "user/dotransfer";
+        return "user/make-transfer";
     }
 
     @RequestMapping(value = "/user/transfer/make", method = RequestMethod.POST)
@@ -63,12 +63,14 @@ public class TransferController {
                                BindingResult bindingResult,
                                Model model, Principal principal) {
         String[] errorsDueToIncorrectData = transferService.validateTransfer(transfer);
+        //first validation
         if (bindingResult.hasErrors()) {
             model.addAttribute("listTransferTypes", listTransferTypes);
             model.addAttribute("listAvailableAccounts", listNumberAccountsWithFunds(principal.getName()));
             System.out.println("errors");
-            return "user/dotransfer";
+            return "user/make-transfer";
         }
+        //second validation
         if (errorsDueToIncorrectData == null) {
             model.addAttribute("listTransferTypes", listTransferTypes);
             model.addAttribute("listAvailableAccounts", listNumberAccountsWithFunds(principal.getName()));
@@ -79,7 +81,7 @@ public class TransferController {
             model.addAttribute("errors", errorsDueToIncorrectData);
             model.addAttribute("listTransferTypes", listTransferTypes);
             model.addAttribute("listAvailableAccounts", listNumberAccountsWithFunds(principal.getName()));
-            return "user/dotransfer";
+            return "make-transfer";
         }
 
     }
@@ -91,7 +93,7 @@ public class TransferController {
         List<List<Transfer>> fullHistory = transferService.getTransferHistoryForUser(email);
         model.addAttribute("sentHistory",fullHistory.get(0));
         model.addAttribute("receivedHistory",fullHistory.get(1));
-        return "user/transferhistory";
+        return "user/transfer-history";
     }
 
 
